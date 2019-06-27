@@ -54,12 +54,8 @@ Manager.prototype.removeManagedEmployee = function (employee) {
 Manager.constructor = Manager;
 
 //Actual logic displaying results in the console.
-var oneEmployee = new Employee(23, 'Carlos', 'Rual', 0001, 60000);
-var theManager = new Manager(3, 'Jerome', 'Williams', 1020, 80000);
+let oneEmployee = new Employee(23, 'Carlos', 'Rual', 0001, 60000);
+let theManager = new Manager(3, 'Jerome', 'Williams', 1020, 80000);
 
 console.log(oneEmployee.generatePayslip());
 console.log(theManager.generatePayslip());
-theManager.addManagedEmployee(oneEmployee);
-console.log(theManager.managedEmployees);
-theManager.removeManagedEmployee(oneEmployee);
-console.log(theManager.managedEmployees);
