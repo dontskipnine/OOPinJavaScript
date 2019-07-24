@@ -8,32 +8,29 @@ HTMLElementOwn.prototype.render = function() { return 'render'; }
 
 // First child element.
 function HTMLSelectElementOwn(items = []) {
-    this.items = [];
+    this.items = items;
+
     this.addItem = function (item){ this.items.push(item); };
     this.removeItem = function (item){ this.items.splice(this.items.indexOf(item), 1); };
+
+    this.render = function() {
+        return `<select>${this.items.map(item => `<option>${item}</option>`).join('')}</select>`;
+    }
 }
 
 HTMLSelectElementOwn.prototype = new HTMLElementOwn();
 HTMLSelectElementOwn.prototype.constructor = HTMLSelectElementOwn;
 
-HTMLSelectElementOwn.prototype.render = function() {
-    return '<select>\n';
-    // + for (item in this.items) {
-    //     <option>
-    // }
-    // + '';
-}
-
-function HTMLImg(address = 'https://www.duckduckgo.com') {
+function HTMLImg(address) {
     this.address = address;
+
+    this.render = function() {
+        return `<img src="${this.address}" />`;
+    }
 }
 
 HTMLImg.prototype = new HTMLElementOwn();
 HTMLImg.prototype.constructor = HTMLImg;
-
-HTMLImg.prototype.render = function() {
-    return 'src=\"' + this.address + '\"';
-}
 
 const s = new HTMLImg();
 
