@@ -1,30 +1,21 @@
-const _count = new WeakMap();
 const _stack = new WeakMap();
 
 class Stack2 {
-    constructor() {
-        _count.set(this, 0);
-        _stack.set(this, []);
-    }
+    constructor() { _stack.set(this, []); }
 
     peek() {
-        let num = _count.get(this) - 1;
-        return _stack.get(this)[num];
+        if (_stack.get(this).length === 0) { throw new Error('Stack is empty!'); }
+        return _stack.get(this)[_stack.get(this).length - 1];
     }
 
     pop() {
-        if (count <= 0) { throw new Error('Stack is empty!'); }
-        let num = _count.get(this) - 1;
-        return _stack.get(this).pop[num];
+        if (_stack.get(this).length === 0) { throw new Error('Stack is empty!'); }
+        return _stack.get(this).pop();
     }
 
-    push(value) {
-        let num = _count.get(this) - 1;
-        _stack.set(this).push(value);
-        _count.set(this, + 1);
-    }
+    push(value) { _stack.get(this).push(value); }
     
-    get count() { return _count.get(this); }
+    get count() { return _stack.get(this).length; }
 }
 
-const stack3 = new Stack2();
+const stack = new Stack2();
