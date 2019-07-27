@@ -2,7 +2,8 @@
 const _radius = new WeakMap();
 
 // Interface
-class Circle {
+// Adding export before class is ES6 Syntax
+export class Circle {
   constructor(radius) {
     _radius.set(this, radius);
   }
@@ -12,4 +13,5 @@ class Circle {
   }
 }
 
-module.exports = Circle;
+// CommonJS Syntax
+//module.exports = Circle;
