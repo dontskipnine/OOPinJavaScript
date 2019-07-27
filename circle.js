@@ -1,5 +1,7 @@
+// Abstraction at work
 const _radius = new WeakMap();
 
+// Interface
 class Circle {
   constructor(radius) {
     _radius.set(this, radius);
@@ -10,5 +12,4 @@ class Circle {
   }
 }
 
-const c = new Circle(10);
-c.draw();
+module.exports = Circle;
