@@ -3,16 +3,17 @@
   "version": "1.0.0",
   "description": "OOPinJavaScript Will feature examples of OOP in JavaScript. This means both Pre-ES6 && Post-ES6 work. Understanding how OOP applies to JavaScript has been a journey for me as I originally learned it in C#. I've been extending my knowledge on FreeCodeCamp, but the OOP section simply left me with more questions than answers so I went off on my own and found some material. One of those is a series of articles by @WellPaidGeek.",
   "main": "webpack.config.js",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
-    "babel-preset-env": "1.7.0",
-    "uglifyjs-webpack-plugin": "2.1.3",
-    "webpack": "4.35.2",
-    "webpack-cli": "3.3.5"
-  },
+    "babel-preset-env": "^1.7.0",
+    "uglifyjs-webpack-plugin": "^1.3.0",
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0"
+  }
   "scripts": {
-    "build": "webpack -w",
+    "build": "webpack"
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
